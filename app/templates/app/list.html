@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Modules {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <p>
+            <a href="{% url 'Product' %}" type="button"> Add Product</a>
+        </p>
+        <div class="row">
+            <div class="col-3 menu">
+                <table class="table table-striped" border="1">
+                     <tr>
+                         <th> Product </th>
+                        <th> Sub-Category </th>
+                        <th> Category </th>
+                         <th></th>
+                     </tr>
+                <tbody>
+                    {% for obj in li %}
+                        <tr>
+
+                            <td>{{ obj.product_name }}</td>
+                            <td>{{ obj.sub_category }}</td>
+                            <td>{{ obj.category }}</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
